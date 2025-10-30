@@ -3,16 +3,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class MenuItem {
-    String nama;
-    double harga;
-
-    MenuItem(String nama, double harga) {
-        this.nama = nama;
-        this.harga = harga;
-    }
-}
-
 public class Main {
     static ArrayList<MenuItem> daftarMenu = new ArrayList<>();
     static ArrayList<MenuItem> pesanan = new ArrayList<>();
