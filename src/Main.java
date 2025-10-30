@@ -1,4 +1,4 @@
-// Aplikasi Sederhana: Nota Pemesanan Makanan di Restoran
+// Aplikasi Sederhana: Nota Pemesanan Makanan di Restoran (Dengan Diskon Otomatis)
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -89,12 +89,17 @@ public class Main {
             total += item.harga;
         }
 
-        // Custom Live Template - Rumus Perhitungan Total dengan Pajak 10%
-        double pajak = total * 0.10; // pajak 10%
-        double totalBayar = total + pajak;
+        // Fitur baru: Diskon otomatis 10% jika total > 50.000
+        double diskon = (total > 50000) ? total * 0.1 : 0;
+        double subtotal = total - diskon;
+
+        // Pajak 10%
+        double pajak = subtotal * 0.1;
+        double totalBayar = subtotal + pajak;
 
         System.out.println("-----------------------------");
         System.out.printf("Subtotal: Rp%.0f\n", total);
+        System.out.printf("Diskon (10%% jika total > 50000): Rp%.0f\n", diskon);
         System.out.printf("Pajak (10%%): Rp%.0f\n", pajak);
         System.out.printf("Total Bayar: Rp%.0f\n", totalBayar);
         System.out.println("-----------------------------");
